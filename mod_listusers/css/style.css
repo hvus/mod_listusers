@@ -1,0 +1,85 @@
+/* filtroable portafolio Stylesheet */
+
+
+/* Simple Reset
+------------------------------------------------------------ */
+html, body, div, h1, h2, ul, li, dl, dd, dt, p { margin: 0; padding: 0; }
+ul { list-style: none; }
+li { list-style: none;}
+
+
+/* Import Fonts
+------------------------------------------------------------ */
+/* 
+@import url(http://fonts.googleapis.com/css?family=Quattrocento);
+*/
+
+/* Custom Classes
+------------------------------------------------------------ */
+.grupo:after { visibility: hidden; display: block; content: ""; clear: both; height: 0; }
+* html .grupo { zoom: 1; } /* IE6 */
+*:first-child+html .grupo { zoom: 1; } /* IE7 */
+
+
+/* General Styles
+------------------------------------------------------------ */
+/*
+body { font-size: 87.5%; line-height: 1.5em; font-family: Georgia,"Times New Roman", Times, serif; color: #222; background: url(../images/bg.png) repeat; }
+*/
+#wrap { max-width: 940px; min-height: 900px; margin: 0 auto; padding: 1.5em 20px; overflow: hidden; background-color: #fff; border: 1px solid #ddd; -moz-box-shadow: 0 0 5px #ddd; -webkit-box-shadow: 0 0 5px #ddd; box-shadow: 0 0 5px #ddd; }
+
+h1, h2 { font-weight: normal; }
+h1 { font-family: 'Quattrocento', serif; font-size: 3em; line-height: 1em; text-transform: uppercase; text-align: center; border-top: 1px solid #000; padding-top: 1em; margin-bottom: 0.33333em; }
+h2 { font-size: 1.5em; line-height: 1em; padding-bottom: 0.5em; border-bottom: 1px solid #aaa; margin-bottom: 0.5em; color: #444; }
+
+a { width: 100%; height : 100%; color: #ffffff; -moz-transition: 0.4s all linear; -webkit-transition: 0.4s all linear; -o-transition: 0.4s all linear; transition: 0.4s all linear; outline-color: #aaa; }
+a:hover { color: #FFFF33; }
+
+.demo-top { margin-bottom: 0.35714em; padding-bottom: 0.5em; border-bottom: 3px solid #000; }
+/*
+.credits { font-family: 'Quattrocento', serif; font-size: 1.28571em; line-height: 1.16667em; text-align: center; color: #444; margin-bottom: 2.66667em; }
+*/
+.back-to-post { border-top: 1px solid #000; margin-bottom: 3em; }
+
+
+/* filtro */
+dl { margin-bottom: 3em; color: #fff; }
+dt, dd { float: left; }
+dt { margin-right: 5px; }
+.filtro {
+  background: none repeat scroll 0 0 rgba(255, 255, 255, 0.1);
+    clear: both;
+    float: left;
+    margin-bottom: 1px;
+    padding: 10px;
+    width: 680px;
+}
+.filtro li { float: left; }
+.filtro li:after { content: "/"; }
+.filtro li:last-child:after { content: ""; }
+.filtro a { padding: 0 10px; color: #000000; text-decoration: none; height:100%; width:100%; }
+.filtro a:hover, .current a { color: lightblue; padding: 0 }
+
+/* portafolio Items */
+.portafolio {
+  background: none repeat scroll 0 0 rgba(255, 255, 255, 0.1);
+    clear: both;
+    float: left;
+    margin-bottom: 1px;
+    padding: 10px;
+    width: 680px;
+}
+.portafolio li { float: left; margin-right: 5px; margin-bottom: 5px; border: 1px solid #ccc; -moz-box-shadow: 0 5px 5px -3px #222; -webkit-box-shadow: 0 5px 5px -3px #222; box-shadow: 0 5px 5px -3px #222; }
+
+.portafolio li { float: left;  border: 1px solid #ccc;}
+.portafolio li:nth-child(4n) { margin-right: 0; }
+/*
+.portafolio a { display: block; border: 3px solid #fff;  text-decoration: none; }
+.portafolio img { display: block; border: 1px solid #ccc; }
+*/
+#imagennueva {height:95%; width:90%;}
+
+#imagennueva :hover {height:400px; width:400px;}
+
+.mifoto {max-height:149px; max-width:120px;}
+.mifoto :hover {height:400px; width:400px;}

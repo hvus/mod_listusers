@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" client="site" method="upgrade">
+  <name>List Users</name>
+  <author>Hector Vega</author>
+  <creationDate>2013-01-14</creationDate>
+  <copyright>Copyright (C) 2015 Hector Vega, Systemas HV, All rights reserved.</copyright>
+  <license> GNU General Public License version 2 or later; see LICENSE.txt</license>
+  <authorEmail>support@sistemashv.com</authorEmail>
+  <authorUrl>www.sistemashv.com</authorUrl>
+  <version>1.0.0</version>
+  <description><![CDATA[Show Users with filtering for Community Builder component from joomlapolis.com
+    <br />
+    If you need help, please visit <a href="http://www.sistemashv.com" target="_blank">www.sistemashv.com</a>
+    ]]></description>
+  <files>
+    <filename module="mod_listusers">mod_listusers.php</filename>
+    <filename>helper.php</filename>
+    <filename>index.html</filename>
+    <filename>LICENSE.txt</filename>
+    <filename>tmpl/default.php</filename>
+    <filename>tmpl/index.html</filename>
+    <folder>css</folder>
+    <folder>css/images</folder>
+    <folder>js</folder>
+    <folder>js/layout-modes</folder>
+    <folder>images</folder>
+    <!-- Javascript files -->
+    <filename>js/overlib_mini.js</filename>
+    <filename>js/isotope.pkgd.min.js</filename>
+    <filename>js/jquery.colorbox-min.js</filename>
+    <filename>js/jquery-1.11.2.min.js</filename>
+    <filename>js/layout-modes/fit-rows.js</filename>
+    <filename>js/layout-modes/masonry.js</filename>
+    <filename>js/layout-modes/vertical.js</filename>
+    <!-- css files -->
+    <filename>css/colorbox.css</filename>
+    <filename>css/isotope.css</filename> 
+    <filename>css/style.css</filename> 
+     <!-- images colorbox files -->
+    <filename>css/images/border.png</filename>
+    <filename>css/images/controls.png</filename> 
+    <filename>css/images/loading_background.png</filename> 
+    <filename>css/images/loading.gif</filename>         
+    <filename>css/images/controls6.png</filename>
+    <filename>css/images/loading6.gif</filename> 
+    <!-- images files -->
+    <filename>images/camera.png</filename> 
+    <filename>images/mail.png</filename> 
+  </files>
+  <languages>
+    <language tag="en-GB">language/en-GB/en-GB.mod_listusers.ini</language>
+    <language tag="es-ES">language/es-ES/es-ES.mod_listusers.ini</language>
+  </languages>  
+  <config>
+   <fields name="params">
+     <fieldset name="USE_MODE">
+      <field name="display_tag" 
+             type="list" 
+             default="EnLinea" 
+             label="MOD_LISTUSERS_USE_AS" 
+             description="MOD_LISTUSERS_USE">
+                <option 
+                    value="OnLine">MOD_LISTUSERS_USERSONLINE</option>
+                <option 
+                    value="NewUsers">MOD_LISTUSERS_NEW</option>
+                <option 
+                    value="UpdatedUsers">MOD_LISTUSERS_UPDATED</option>
+                <option 
+                    value="UsersMoreVisited">MOD_LISTUSERS_MORE</option>
+                <option 
+                    value="NewGalleries">MOD_LISTUSERS_NEWPICS</option>
+      </field>
+       <field name="poweredbysistemashv" 
+             type="radio" 
+             class="btn-group"
+             default="Yes" 
+             label="MOD_LISTUSERS_POWEREDBYSISTEMASHV" 
+             description="MOD_LISTUSERS_POWEREDBYSISTEMASHV_DESC">
+                <option 
+                    value="Yes">MOD_LISTUSERS_YES</option>
+                <option 
+                    value="No">MOD_LISTUSERS_NO</option>
+      </field>
+      <field name="moduleclass_sfx" 
+             type="text" default=""  
+             label="Module Class Suffix" 
+             description="css class suffix for special styling"/>
+      <!--field type="spacer" name="myspacer1" label="Advanced parameters" /-->  
+     </fieldset>    
+     <fieldset name="COSMETICS">  
+             <field name="boxwidth" 
+             type="text" 
+             default="150px" 
+             label="MOD_LISTUSERS_BOXWIDTH"       
+             description="MOD_LISTUSERS_BOXWIDTH_DESC"/>
+      <field name="boxbackgroundcolor" 
+             type="color" 
+             default="#700502"  
+             label="MOD_LISTUSERS_BACKGROUND_COLOR"  
+             description="MOD_LISTUSERS_BACKGROUND_COLOR_DESC" />
+      <field name="modulebackgroundcolor" 
+             type="color" 
+             default="#700502"  
+             label="MOD_LISTUSERS_BACKGROUNDCOLOR" 
+             description="MOD_LISTUSERS_BACKGROUNDCOLOR_DESC"/>
+      <field name="roundedcornersboxmodule" 
+             type="radio" 
+             class="btn-group"
+             default="Yes" 
+             label="MOD_LISTUSERS_ROUNDEDCORNER" 
+             description="MOD_LISTUSERS_ROUNDEDCORNER_DESC">
+                <option 
+                    value="Yes">MOD_LISTUSERS_YES</option>
+                <option 
+                    value="No">MOD_LISTUSERS_NO</option>
+      </field>
+      <field name="boxshadowmodule" 
+             type="radio" 
+             class="btn-group"
+             default="Yes" 
+             label="MOD_LISTUSERS_BOXSHADOW" 
+             description="MOD_LISTUSERS_BOXSHADOW_DESC">
+               <option 
+                   value="Yes">MOD_LISTUSERS_YES</option>
+               <option 
+                   value="No">MOD_LISTUSERS_NO</option>
+      </field>
+     </fieldset>    
+     <fieldset name="TITLES">  
+
+      <field name="titleline" 
+             type="text" 
+             default=""  
+             label="MOD_LISTUSERS_TITLELINE" 
+             description="MOD_LISTUSERS_TITLELINE_DESC"/>
+      <field name="titleline_shadow" 
+             type="radio" 
+             class="btn-group"
+             default="Yes" 
+             label="MOD_LISTUSERS_TITLELINE_SHADOW" 
+             description="MOD_LISTUSERS_TITLELINE_SHADOW_DESC">
+                <option 
+                    value="Yes">MOD_LISTUSERS_YES</option>
+                <option 
+                    value="No">MOD_LISTUSERS_NO</option>
+      </field>
+      <field name="title_text_align" 
+             type="radio" 
+             class="btn-group"
+             default="Center" 
+             label="MOD_LISTUSERS_TITLEALIGN" 
+             description="MOD_LISTUSERS_TITLEALIGN_DESC">
+                <option 
+                    value="center">MOD_LISTUSERS_CENTER</option>
+                <option 
+                    value="left">MOD_LISTUSERS_LEFT</option>
+                <option 
+                    value="right">MOD_LISTUSERS_RIGHT</option>
+      </field>
+      <field name="titlefontsize" 
+             type="text" 
+             default="36pt"  
+             label="MOD_LISTUSERS_TITLEFONTSIZE" 
+             description="MOD_LISTUSERS_TITLEFONTSIZE_DESC"/>
+      <field name="titlefontcolor" 
+             type="color" 
+             default="#ffffff"  
+             label="MOD_LISTUSERS_TITLECOLOR" 
+             description="MOD_LISTUSERS_TITLECOLOR_DESC"/>
+      <field name="subtitle" 
+             type="text" 
+             default=""  
+             label="MOD_LISTUSERS_SUBTITLE" 
+             description="MOD_LISTUSERS_SUBTITLE_DESC"/>
+      <field name="subtitlefontsize" 
+             type="text" 
+             default="8pt"  
+             label="MOD_LISTUSERS_SUBTITLEFONTSIZE" 
+             description="MOD_LISTUSERS_SUBTITLEFONTSIZE_DESC"/>
+      <field name="subtitlefontcolor" 
+             type="color" 
+             default="#ffffff"  
+             label="MOD_LISTUSERS_SUBTITLECOLOR" 
+             description="MOD_LISTUSERS_SUBTITLECOLOR_DESC"/>
+      <!--field type="spacer" name="myspacer1" label="Advanced parameters" /-->
+     </fieldset>    
+     <fieldset name="FIELDS">  
+      <field name="limit_show_users"  
+             type="text" 
+             default="500" 
+             label="MOD_LISTUSERS_LIMIT"  
+             description="MOD_LISTUSERS_LIMIT_DESC"/>
+      <field name="omit_users"  
+             type="text" 
+             default="" 
+             label="MOD_LISTUSERS_OMITIDS"  
+             description="MOD_LISTUSERS_OMIT"/>
+      <!--field type="spacer" name="myspacer1" label="Advanced parameters" /--> 
+             <field name="cb_field1" 
+             type="text" 
+             default="cb_" 
+             label="MOD_LISTUSERS_FIELD1"       
+             description="MOD_LISTUSERS_FIELD1_DESC"/>
+      <field name="field1fontsize" 
+             type="text" 
+             default="8px"  
+             label="MOD_LISTUSERS_FIELD1FONTSIZE" 
+             description="MOD_LISTUSERS_FIELD1FONTSIZE_DESC"/>
+      <field name="field1fontcolor" 
+             type="color" 
+             default="#ffffff"  
+             label="MOD_LISTUSERS_FIELD1COLOR" 
+             description="MOD_LISTUSERS_FIELD1COLOR_DESC"/>      
+      <field name="cb_field2" 
+             type="text" 
+             default="cb_" 
+             label="MOD_LISTUSERS_FIELD2"       
+             description="MOD_LISTUSERS_FIELD2_DESC"/>
+        <field name="field2fontsize" 
+             type="text" 
+             default="8px"  
+             label="MOD_LISTUSERS_FIELD2FONTSIZE" 
+             description="MOD_LISTUSERS_FIELD2FONTSIZE_DESC"/>
+      <field name="field2fontcolor" 
+             type="color" 
+             default="#ffffff"  
+             label="MOD_LISTUSERS_FIELD2COLOR" 
+             description="MOD_LISTUSERS_FIELD2COLOR_DESC"/>     
+      <field name="cb_field3" 
+             type="text" default="cb_" 
+             label="MOD_LISTUSERS_FIELD3"       
+             description="MOD_LISTUSERS_FIELD3_DESC"/>
+      <field name="field3fontsize" 
+             type="text" 
+             default="8px"  
+             label="MOD_LISTUSERS_FIELD1FONTSIZE" 
+             description="MOD_LISTUSERS_FIELD1FONTSIZE_DESC"/>
+      <field name="field3fontcolor" 
+             type="color" 
+             default="#ffffff"  
+             label="MOD_LISTUSERS_FIELD3COLOR" 
+             description="MOD_LISTUSERS_FIELD3COLOR_DESC"/>       
+      <!--field type="spacer" name="myspacer1" label="Advanced parameters" /--> 
+             <field name="cb_filterbyfield" 
+             type="text" 
+             default="cb_" 
+             label="MOD_LISTUSERS_FILTERFIELD"       
+             description="MOD_LISTUSERS_FILTERFIELD_DESC"/>
+      <field name="limit_filter_rows"  
+             type="text" default="5" 
+             label="MOD_LISTUSERS_LIMIT_FILTER"  
+             description="MOD_LISTUSERS_LIMIT_FILTER_DESC"/>
+      <!--field type="spacer" name="myspacer1" label="Advanced parameters" /--> 
+           
+      </fieldset>    
+     <fieldset name="CONFIG_ICONS">  
+       <field name="display_galleries" 
+             type="radio" 
+             class="btn-group"
+             default="Yes" 
+             label="MOD_LISTUSERS_LINK" 
+             description="MOD_LISTUSERS_LINK_DESC">
+                <option 
+                    value="Yes">MOD_LISTUSERS_YES</option>
+                <option 
+                    value="No">MOD_LISTUSERS_NO</option>
+      </field>    
+     <field name="display_email_icon" 
+             type="radio" 
+             class="btn-group"
+             default="Yes" 
+             label="MOD_LISTUSERS_LINK_EMAIL" 
+             description="MOD_LISTUSERS_LINK_EMAIL_DESC">
+                <option 
+                    value="Yes">MOD_LISTUSERS_YES</option>
+                <option 
+                    value="No">MOD_LISTUSERS_NO</option>
+      </field>
+       <field name="onlywithpic" 
+              type="radio"
+              class="btn-group" 
+              default="Yes" 
+              label="MOD_LISTUSERS_SHOWWITHPIC" 
+              description="MOD_LISTUSERS_SHOWWITHPIC_DESC">
+                <option 
+                    value="Yes">MOD_LISTUSERS_YES</option>
+                <option 
+                    value="No">MOD_LISTUSERS_NO</option>
+      </field> 
+
+    </fieldset>
+   </fields>  
+  </config>
+</extension>
